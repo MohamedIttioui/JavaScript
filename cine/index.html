@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cine</title>
+</head>
+<body>
+    <h1>Cine</h1>
+    <div class="contenedor-pelicula">
+        <label>Escoja una película: </label>
+        <select id="pelicula">
+            <option value="5">Super Mario Bros: La película (5€)</option>
+            <option value="10">Guardianes de la galaxia Vol (10€)</option>
+            <option value="15">Star Wars (15€)</option>
+            <option value="20">Braindead (20€)</option>
+        </select>
+    </div>
+
+    <ul class="leyenda">
+        <li>
+            <div class="asiento"></div>
+            <small>N/A</small>
+        </li>
+        <li>
+            <div class="asiento seleccionado"></div>
+            <small>Seleccionado</small>
+        </li>
+        <li>
+            <div class="asiento ocupado"></div>
+            <small>Ocupado</small>
+        </li>
+    </ul>
+
+    <div class="contenedor">
+        <div class="pantalla"></div>
+        <div class="fila">
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento ocupado"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+        </div>
+        <div class="fila">
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento ocupado"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+        </div>
+        <div class="fila">
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento ocupado"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+        </div>
+        <div class="fila">
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento ocupado"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+        </div>
+        <div class="fila">
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento ocupado"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+        </div>
+        <div class="fila">
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento ocupado"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento"></div>
+            <div class="asiento ocupado"></div>
+            <div class="asiento"></div>
+        </div>
+    </div>
+
+    <p class="texto">Has seleccionado <span id="contador">0</span> asientos por un precio de <span id="total">0</span> €</p>
+
+    <input type="button" id="finalizar" value="Finalizar selección">
+
+    <script src="script.js"></script>
+</body>
+</html>
