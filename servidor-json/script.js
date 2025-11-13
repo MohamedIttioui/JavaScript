@@ -29,6 +29,7 @@ async function cargarPalabras() {
             <div>
               <p>${palabra.palabra} - Dificultad: ${palabra.dificultad}</p>
               <button class="editar" onclick="editarPalabra(${palabra.id})">Editar</button>
+              <button class="eliminar" onclick="eliminarPalabra(${palabra.id})">Eliminar</button>
             </div>
           `
         )
@@ -53,14 +54,16 @@ async function guardarPalabra(e) {
   const palabra = {
     id: 0, //código para generar un id.
     palabra: document.getElementById("palabra").value,
-    dificultad: document.getElementById("dificultad").value
+    dificultad: +document.getElementById("dificultad").value
   };
   fetch(`${urlPalabrasEndPoint}`).then((response) => response.json()).then((datos) => {
     if (method == "POST") {
       palabra.id = +datos[datos.length - 1].id + 1;
+      palabra.id += "";
       console.log("AÑADIENDO: ", palabra.id);
     } else {
-      palabra.id = +palabra.id;
+      // palabra.id = +palabra.id;
+      palabra.id += "";
       console.log("EDITANDO: ", palabra.id);
     }
     return fetch(`${url}`, {
@@ -86,4 +89,29 @@ async function cargarPalabra(id) {
 
 function editarPalabra(id) {
   window.location.href = `palabras-edit.html?id=${id}`;
+}
+
+/* async function eliminarPalabra(id) {
+  try {
+    console.log("Eliminando... ");
+    await fetch(`${urlPalabrasEndPoint}/${id}`, { method: "DELETE" });
+    alert("Palabra eliminada");
+  } catch (error) {
+    console.log("Error al eliminar la palabra", error);
+  }
+} */
+async function eliminarPalabra(id) {
+  try {
+    const urlDelete = `${urlPalabrasEndPoint}/${id}`;
+    console.log("Eliminando... ", urlDelete);
+    fetch(`${urlDelete}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then((response) => response.json)
+      .then(() => cargarPalabra())
+  } catch (error) {
+    console.log("Error al eliminar la palabra", error);
+  }
 }
