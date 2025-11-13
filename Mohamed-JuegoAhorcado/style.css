@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
 
 * {
   margin: 0;
@@ -14,7 +14,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-family: 'Noto Sans', 'sans-serif';
+  font-family: 'Open Sans', 'sans-serif';
 }
 
 p.texto {
@@ -34,6 +34,11 @@ p.texto {
   text-align: center;
   font-size: 24px;
   margin: 0 4px;
+}
+
+#tema{
+  margin-top: 16px;
+  font-size: 18px;
 }
 
 .contenedor {

@@ -1,0 +1,29 @@
+{
+  "palabras": [
+    {
+      "id": "1",
+      "palabra": "Objetos",
+      "dificultad": "2"
+    },
+    {
+      "id": "2",
+      "palabra": "Programación",
+      "dificultad": 3
+    },
+    {
+      "id": "3",
+      "palabra": "Clases",
+      "dificultad": 4
+    },
+    {
+      "id": "4",
+      "palabra": "Servidor",
+      "dificultad": 1
+    },
+    {
+      "id": 5,
+      "palabra": "Nueces",
+      "dificultad": "2"
+    }
+  ]
+}

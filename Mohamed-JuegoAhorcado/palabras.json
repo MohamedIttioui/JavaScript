@@ -1,0 +1,10 @@
+{
+  "palabras": [
+    { "id": 1, "palabra": "GUAYABA", "tema": "Frutas" },
+    { "id": 2, "palabra": "MANZANA", "tema": "Frutas" },
+    { "id": 3, "palabra": "PERA", "tema": "Frutas" },
+    { "id": 4, "palabra": "PROGRAMACION", "tema": "Informática" },
+    { "id": 5, "palabra": "OBJETOS", "tema": "Informática" },
+    { "id": 6, "palabra": "CLASES", "tema": "Informática" }
+  ]
+}

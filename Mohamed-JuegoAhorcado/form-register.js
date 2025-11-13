@@ -4,40 +4,39 @@ const nomUsuario = document.getElementById('nomUsuario');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-const cerrarPopup = document.querySelector('.cierra-popup');
+const contenidorPopup = document.getElementById('contenedor-popup');
+/* const cierraPopup = document.querySelector('.cierra-popup');
 
-cerrarPopup.addEventListener('click', () => {
-  document.getElementById('contenedor-popup').style.display = 'none';
-});
+// Cerrar popup
+cierraPopup.addEventListener('click', () => {
+  contenidorPopup.style.display = 'none';
+}); */
 
-// Mostrar error
+// Funciones de validación
 function mostrarError(input, mensaje) {
   const formControl = input.parentElement;
   formControl.className = 'form-control error';
   const label = formControl.querySelector('label');
   const small = formControl.querySelector('small');
-  small.innerText = `${label.innerText} ${mensaje}`;
+  small.innerText = label.innerText + ' ' + mensaje;
 }
 
-// Mostrar correcto
 function mostrarCorrecto(input) {
   const formControl = input.parentElement;
   formControl.className = 'form-control correcto';
 }
 
-// Validar email
 function esEmailValido(input) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (re.test(input.value.trim().toLowerCase())) {
+  if (re.test(String(input.value.trim()).toLowerCase())) {
     mostrarCorrecto(input);
   } else {
-    mostrarError(input, 'no es válido.');
+    mostrarError(input, `El email no es válido.`);
   }
 }
 
-// Validar campos obligatorios
-function esObligatorio(inputs) {
-  inputs.forEach(input => {
+function esObligatorio(inputArray) {
+  inputArray.forEach((input) => {
     if (input.value.trim() === '') {
       mostrarError(input, 'es obligatorio');
     } else {
@@ -46,29 +45,24 @@ function esObligatorio(inputs) {
   });
 }
 
-// Validar longitud
-function comprobarLongitud(inputs, min, max) {
-  inputs.forEach(input => {
+function comprobarLongitudObjeto(inputArray, min, max) {
+  inputArray.forEach((input) => {
     if (input.value.length < min) {
       mostrarError(input, `debe tener al menos ${min} caracteres.`);
     } else if (input.value.length > max) {
-      mostrarError(input, `debe tener como máximo ${max} caracteres.`);
+      mostrarError(input, `debe tener ${max} caracteres como máximo.`);
     } else {
       mostrarCorrecto(input);
     }
   });
 }
 
-// Validar contraseñas iguales
 function comprobarContraseñasIguales(input1, input2) {
   if (input1.value !== input2.value) {
-    mostrarError(input2, 'las contraseñas no coinciden.');
-  } else {
-    mostrarCorrecto(input2);
+    mostrarError(input2, `las contraseñas no son iguales.`);
   }
 }
 
-// Verificar si el formulario es válido
 function formularioEsValido() {
   const controles = document.querySelectorAll('.form-control');
   for (let control of controles) {
@@ -79,12 +73,12 @@ function formularioEsValido() {
   return true;
 }
 
-// Evento submit
+// Evento de envío del formulario
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   esObligatorio([nomUsuario, email, password, password2]);
-  comprobarLongitud([nomUsuario, password], 4, 15);
+  comprobarLongitudObjeto([nomUsuario, password], 4, 15);
   comprobarContraseñasIguales(password, password2);
   esEmailValido(email);
 
@@ -92,15 +86,21 @@ form.addEventListener('submit', (e) => {
     const datos = {
       nombre: nomUsuario.value,
       email: email.value,
-      password: password.value
+      password: password.value,
+      victorias: 0,
+      derrotas: 0,
+      partidas: [] // ← Aquí guardaremos cada palabra jugada
     };
-    localStorage.setItem('jugador', JSON.stringify(datos));
-    console.log('Formulario enviado correctamente');
-    console.log('Datos guardados:', datos);
+    localStorage.setItem('usuarioDAWEC', JSON.stringify(datos));
+
+    contenidorPopup.style.display = 'none';
     form.reset();
-    document.querySelectorAll('.form-control').forEach((control) => {
-      control.className = 'form-control';
-    });
+
+    // Iniciar el juego solo si el usuario ha elegido un tema
+    const temaSeleccionado = document.getElementById("tema").value;
+    if (temaSeleccionado) {
+      iniciarJuego();
+    }
   } else {
     console.log('El formulario tiene errores. No se ha enviado.');
   }
