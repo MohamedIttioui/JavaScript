@@ -57,15 +57,15 @@ function comprobarLongitudObjeto(inputArray, min, max) {
   });
 }
 
-function comprobarContraseñasIguales(input1, input2) {
-  if (input1.value !== input2.value) {
-    mostrarError(input2, `las contraseñas no son iguales.`);
+function comprobarContraseñasIguales(password, password2) {
+  if (password.value !== password2.value) {
+    mostrarError(password2, `las contraseñas no son iguales.`);
   }
 }
 
 function formularioEsValido() {
-  const controles = document.querySelectorAll('.form-control');
-  for (let control of controles) {
+  const formControl = document.querySelectorAll('.form-control');
+  for (let control of formControl) {
     if (!control.classList.contains('correcto')) {
       return false;
     }
@@ -89,9 +89,9 @@ form.addEventListener('submit', (e) => {
       password: password.value,
       victorias: 0,
       derrotas: 0,
-      partidas: [] // ← Aquí guardaremos cada palabra jugada
+      partidas: [] // Aquí guardaremos cada palabra jugada
     };
-    localStorage.setItem('usuarioDAWEC', JSON.stringify(datos));
+    localStorage.setItem('Jugador', JSON.stringify(datos));
 
     contenidorPopup.style.display = 'none';
     form.reset();
@@ -102,6 +102,6 @@ form.addEventListener('submit', (e) => {
       iniciarJuego();
     }
   } else {
-    console.log('El formulario tiene errores. No se ha enviado.');
+    console.log('El formulario tiene errores.');
   }
 });

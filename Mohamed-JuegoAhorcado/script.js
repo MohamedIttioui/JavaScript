@@ -126,7 +126,7 @@ function verificarDerrota() {
     bloquearTeclado();
     palabraSecreta.split("").forEach((char, i) => letrasOcultas[i].textContent = char);
     const mensaje = document.createElement("span");
-    const usuario = JSON.parse(localStorage.getItem("usuarioDAWEC"));
+    const usuario = JSON.parse(localStorage.getItem("Jugador"));
     if (usuario) {
       usuario.derrotas++;
       usuario.partidas.push({
@@ -135,7 +135,7 @@ function verificarDerrota() {
         errores,
         tiempo
       });
-      localStorage.setItem("usuarioDAWEC", JSON.stringify(usuario));
+      localStorage.setItem("Jugador", JSON.stringify(usuario));
       console.log("Estadística actualizada:", usuario);
     }
     mensaje.textContent = "¡Has perdido!";
