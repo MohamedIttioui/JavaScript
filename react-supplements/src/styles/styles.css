@@ -1,0 +1,276 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f5f7;
+  color: #111;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* HEADER */
+.app-header {
+  background: #111;
+  color: #fff;
+  padding: 14px 24px;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav a {
+  margin-left: 16px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.nav a:hover,
+.nav a.active {
+  opacity: 1;
+  font-weight: 600;
+}
+
+.user-tag {
+  margin-left: 16px;
+  color: #00a86b;
+  font-weight: bold;
+}
+
+.btn-logout {
+  margin-left: 16px;
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  background: #c00;
+  border-color: #c00;
+}
+
+/* BODY WRAPPER */
+.app-body {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px 40px;
+}
+
+/* FOOTER */
+.app-footer {
+  border-top: 1px solid #ddd;
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+/* BUTTONS */
+.btn-primary {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #00a86b;
+}
+
+/* PAGES */
+.page h2 {
+  margin-bottom: 16px;
+}
+
+/* HOME */
+.hero {
+  padding: 40px 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* PRODUCT LIST */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card-image-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.product-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card-info h3 {
+  margin: 0 0 8px;
+}
+
+.product-card-price {
+  font-weight: bold;
+  color: #00a86b;
+  margin-bottom: 6px;
+}
+
+.product-card-format {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* PRODUCT DETAIL */
+.product-detail {
+  display: flex;
+  gap: 32px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.product-detail-image-wrapper {
+  flex: 0 0 320px;
+}
+
+.product-detail-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.product-detail-info {
+  flex: 1;
+}
+
+.product-detail-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00a86b;
+  margin: 8px 0 12px;
+}
+
+.product-detail-desc {
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* CATEGORIES */
+.category-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-item {
+  padding: 8px 12px;
+  background: #fff;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+}
+
+/* GAME */
+.game-current {
+  font-size: 24px;
+  margin: 12px 0;
+}
+
+.game-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.game-form input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.game-feedback {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.game-feedback.correct {
+  color: #00a86b;
+}
+
+.game-feedback.wrong {
+  color: #c00;
+}
+
+.game-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* LOGIN */
+.login-form {
+  display: flex;
+  gap: 12px;
+  max-width: 320px;
+}
+
+.login-form input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* ERRORS */
+.error {
+  color: #c00;
+  font-weight: bold;
+}
