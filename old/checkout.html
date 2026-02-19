@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../css/common.css"> -->
+    <link rel="stylesheet" href="../css/checkout.css">
+    <title>NutriCore | Checkout</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="../index.html"><img src="../assets/img/logo_transparenteRecotado.png" alt="NutriCore" class="logo"></a>
+    </header>
+
+    <main class="checkout-container">
+        <h1 class="section-title">Finalizar Compra</h1>
+
+        <div class="checkout-layout">
+            <!-- FORMULARIO DE ENVÍO -->
+            <section class="checkout-form">
+                <h2>Datos de Envío</h2>
+                <form id="form-checkout">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad</label>
+                            <input type="text" id="ciudad" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cp">Código Postal</label>
+                            <input type="text" id="cp" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pais">País</label>
+                        <select id="pais" required>
+                            <option value>Seleccionar país</option>
+                            <option value="es">España</option>
+                            <option value="fr">Francia</option>
+                            <option value="pt">Portugal</option>
+                        </select>
+                    </div>
+
+                    <h2>Método de Pago</h2>
+
+                    <div class="payment-methods">
+                        <label class="method">
+                            <input type="radio" name="payment" value="tarjeta" checked>
+                            <i class="fas fa-credit-card"></i> Tarjeta de
+                            crédito
+                        </label>
+                        <label class="method">
+                            <input type="radio" name="payment" value="paypal">
+                            <i class="fab fa-paypal"></i> PayPal
+                        </label>
+                        <label class="method">
+                            <input type="radio" name="payment" value="transferencia">
+                            <i class="fas fa-university"></i> Transferencia
+                            bancaria
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comentarios">Comentarios
+                            adicionales</label>
+                        <textarea id="comentarios" rows="3" placeholder="Notas sobre tu pedido..."></textarea>
+                    </div>
+
+                    <div class="checkout-actions">
+                        <button type="submit" class="btn-primary">Realizar
+                            Pedido</button>
+                        <a href="carrito.html" class="btn-ghost">Volver al
+                            Carrito</a>
+                    </div>
+                </form>
+            </section>
+
+            <!-- RESUMEN DEL PEDIDO -->
+            <aside class="order-summary">
+                <h2>Resumen del Pedido</h2>
+                <div class="summary-line">
+                    <span>Subtotal</span><span>€124.97</span>
+                </div>
+                <div class="summary-line">
+                    <span>Envío</span><span>€4.99</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total</span><span>€129.96</span>
+                </div>
+
+                <div class="summary-items">
+                    <p><strong>1x</strong> Proteína Whey Isolate</p>
+                    <p><strong>2x</strong> BCAA Recovery 2:1:1</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 NutriCore. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #E6F4EA 0%, #F6F8F8 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav {
+            background-color: #ffffff;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 20px 50px;
+            flex-wrap: wrap;
+            border: 2px solid #14950D;
+        }
+
+        .nav-item {
+            background: linear-gradient(135deg, #14950D, #2BBE1D);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(20, 149, 13, 0.3);
+        }
+
+        .nav-item:hover {
+            background: linear-gradient(135deg, #107A0B, #23A117);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(20, 149, 13, 0.4);
+        }
+
+        .nav-item a {
+            color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            .nav {
+                flex-direction: column;
+                padding: 30px;
+            }
+
+            .nav-item {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-item">
+            <a href="/student013/shop/backend/forms/form_login.php">Login</a>
+        </div>
+        <div class="nav-item">
+            <a href="/student013/shop/backend/index.php">Backend</a>
+        </div>
+    </nav>
+</body>
+
+</html>

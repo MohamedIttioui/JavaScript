@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NutriCore — Style Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --negro: #1D1A1B;
+            --verde: #14950D;
+            --blanco: #F6F8F8;
+            --rojo: #EE1D0A;
+
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --fw-bold: 700;
+        }
+
+        /* Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--blanco);
+            color: var(--negro);
+            line-height: 1.5;
+            padding: 32px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .sg-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .brand {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .brand .logo {
+            width: 56px;
+            height: 56px;
+            background: var(--negro);
+            border-radius: 12px;
+            color: var(--blanco);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand h1 {
+            font-size: 20px;
+        }
+
+        /* Palette */
+        .palette {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 18px 0 28px;
+        }
+
+        .swatch {
+            width: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .swatch .bar {
+            height: 80px;
+        }
+
+        .swatch .meta {
+            padding: 10px;
+            background: #fff;
+        }
+
+        .swatch .meta code {
+            display: block;
+            margin-top: 6px;
+            color: #444;
+        }
+
+        /* Typography */
+        .type-samples {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .type-box {
+            background: #fff;
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-primary {
+            background: var(--verde);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            filter: brightness(0.95);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--rojo);
+            color: white;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--negro);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(0, 0, 0, 0.03);
+            transform: translateY(-1px);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--rojo);
+            color: white;
+            font-weight: 700;
+        }
+
+        /* Forms */
+        .form-sample {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 12px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            padding: 10px;
+            border: 1px solid #d7d7d7;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: var(--verde);
+            outline: none;
+        }
+
+        /* Product card */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin: 22px 0;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 16px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card h4 {
+            font-size: 18px;
+            margin-top: 6px;
+        }
+
+        .price {
+            color: var(--verde);
+            font-weight: 700;
+        }
+
+        .formato {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .card-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        /* Footer */
+        .footer-sample {
+            background: var(--negro);
+            color: var(--blanco);
+            padding: 18px;
+            border-radius: 12px;
+            margin-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-sample a {
+            color: var(--rojo);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media(max-width:1000px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .type-samples {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:560px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="sg-header">
+            <div class="brand">
+                <div class="logo">NC</div>
+                <div>
+                    <h1>NutriCore — Style Guide</h1>
+                    <div style="font-size:13px;color:#666">Paleta, tipografía y componentes</div>
+                </div>
+            </div>
+            <div style="text-align:right">
+                <div style="font-size:13px;color:#666">Versión</div>
+                <div style="font-weight:700">1.1 — 2025</div>
+            </div>
+        </header>
+
+        <!-- Palette -->
+        <section>
+            <h2>Paleta de colores</h2>
+            <div class="palette">
+                <div class="swatch">
+                    <div class="bar" style="background:var(--negro);"></div>
+                    <div class="meta"><strong>Negro grafito</strong><code>#1D1A1B</code></div>
+                </div>
+                <div class="swatch">
+                    <div class="bar" style="background:var(--verde);"></div>
+                    <div class="meta"><strong>Verde intenso</strong><code>#14950D</code></div>
+                </div>
+                <div class="swatch">
+                    <div class="bar" style="background:var(--blanco);"></div>
+                    <div class="meta"><strong>Blanco humo</strong><code>#F6F8F8</code></div>
+                </div>
+                <div class="swatch">
+                    <div class="bar" style="background:var(--rojo);"></div>
+                    <div class="meta"><strong>Rojo intenso</strong><code>#EE1D0A</code></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section>
+            <h2>Tipografía</h2>
+            <div class="type-samples">
+                <div class="type-box">
+                    <h3>Encabezados — Oswald</h3>
+                    <p style="font-family:'Oswald',sans-serif;font-size:28px;">H1 / Título — Oswald, 28px</p>
+                    <p style="font-family:'Oswald',sans-serif;font-size:20px;">H2 / Subtítulo — Oswald, 20px</p>
+                    <p style="font-family:'Oswald',sans-serif;font-size:16px;">H3 — Oswald, 16px</p>
+                </div>
+                <div class="type-box">
+                    <h3>Texto — Open Sans</h3>
+                    <p style="font-size:16px;">Párrafo de ejemplo en Open Sans para descripciones.</p>
+                    <p style="font-size:14px;color:#555;">Tamaño secundario / metadatos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons -->
+        <section>
+            <h2>Botones y acciones</h2>
+            <div class="buttons">
+                <button class="btn btn-primary">Acción principal</button>
+                <button class="btn btn-secondary">CTA secundario</button>
+                <button class="btn btn-ghost">Ghost / Secundario</button>
+                <span class="badge">En promoción</span>
+            </div>
+        </section>
+
+        <!-- Product cards -->
+        <section>
+            <h2>Tarjetas de producto</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/600x400?text=Whey+Isolate" alt="">
+                    <h4>Proteína Whey Isolate</h4>
+                    <div class="price">€24.99</div>
+                    <div class="formato">Formato: 1kg</div>
+                    <div class="card-actions">
+                        <input type="number" value="1"
+                            style="width:70px;padding:8px;border-radius:6px;border:1px solid #ddd">
+                        <button class="btn btn-primary">Agregar</button>
+                        <button class="btn btn-ghost">Ver</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/600x400?text=Creatina" alt="">
+                    <h4>Creatina Monohidratada</h4>
+                    <div class="price">€14.50</div>
+                    <div class="formato">Formato: 500g</div>
+                    <div class="card-actions">
+                        <input type="number" value="1"
+                            style="width:70px;padding:8px;border-radius:6px;border:1px solid #ddd">
+                        <button class="btn btn-primary">Agregar</button>
+                        <button class="btn btn-ghost">Ver</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/600x400?text=Vegan+Protein" alt="">
+                    <h4>Proteína Vegan</h4>
+                    <div class="price">€26.50</div>
+                    <div class="formato">Formato: 1kg</div>
+                    <div class="card-actions">
+                        <input type="number" value="1"
+                            style="width:70px;padding:8px;border-radius:6px;border:1px solid #ddd">
+                        <button class="btn btn-primary">Agregar</button>
+                        <button class="btn btn-ghost">Ver</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/600x400?text=BCAA" alt="">
+                    <h4>BCAA 2:1:1</h4>
+                    <div class="price">€19.90</div>
+                    <div class="formato">Formato: 300g</div>
+                    <div class="card-actions">
+                        <input type="number" value="1"
+                            style="width:70px;padding:8px;border-radius:6px;border:1px solid #ddd">
+                        <button class="btn btn-primary">Agregar</button>
+                        <button class="btn btn-ghost">Ver</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

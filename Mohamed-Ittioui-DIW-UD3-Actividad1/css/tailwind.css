@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-negro: #1D1A1B;
+  --color-verde: #14950D;
+  --color-blanco: #F6F8F8;
+  --color-rojo: #EE1D0A;
+
+  --font-oswald: "Oswald", sans-serif;
+  --font-open: "Open Sans", sans-serif;
+}
+
+body {
+  padding-top: 100px;
+}
+
+.user-menu .user-dropdown.active {
+  display: flex;
+}
+
+/*PRODUCTO*/
+.product-container {
+  @apply grid grid-cols-1 max-w-[1500px] mx-auto gap-8 px-4 mt-6 mb-6;
+}
+
+.small-images img {
+  @apply w-20 h-20 rounded-lg cursor-pointer object-cover border-2 border-transparent flex-none transition;
+}
+
+.small-images img:hover {
+  @apply border-verde;
+}
+
+/*Selector de formato*/
+.format-btn:hover {
+  @apply border-verde text-verde;
+}
+
+.format-btn.active {
+  @apply bg-verde border-verde text-blanco;
+}
+
+.product-info #product-price,
+.related .card .price {
+  @apply text-verde font-bold text-[36px] mt-3;
+}
+
+/* Botones */
+.btn-primary:hover {
+  @apply bg-[#0e6b09];
+}
+
+.btn-ghost {
+  border: 1px solid var(--color-verde) !important;
+}
+
+.btn-ghost:hover {
+  @apply bg-verde text-blanco;
+}
+
+/* RELACIONADOS */
+.related {
+  @apply max-w-[1200px] mx-auto my-[60px] px-4;
+}
+
+.card {
+  @apply bg-blanco rounded-[10px] text-center p-4 transition border border-verde;
+}
+
+.card:hover {
+  @apply -translate-y-1 scale-[1.02];
+}
+
+.card img {
+  @apply w-full rounded-lg mb-2;
+}
+
+.related .card .price {
+  @apply text-[24px];
+}
+
+/* Footer */
+.footer a {
+  @apply text-blanco transition-colors transform duration-300 ease-in-out;
+}
+
+footer a:hover {
+  @apply text-verde -translate-y-[3px];
+}
+
+@media (min-width: 768px) {
+  .btn-group {
+    @apply flex-row gap-3;
+  }
+
+  .btn-group .btn-primary,
+  .btn-group .btn-ghost {
+    @apply flex-1;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* body {
+    padding-top: 100px;
+  } */
+
+  .product-container {
+    @apply grid-cols-2;
+  }
+
+  .btn-group {
+    @apply flex-row gap-3;
+  }
+
+  .btn-group .btn-primary,
+  .btn-group .btn-ghost {
+    @apply flex-1;
+  }
+}

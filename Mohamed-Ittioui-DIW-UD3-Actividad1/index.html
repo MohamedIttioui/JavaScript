@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>NutriCore | Index</title>
+</head>
+
+<body>
+    <header class="header">
+        <button class="menu-icon" aria-label="Abrir menú">
+            <img src="./assets/icons/menu.svg" alt="Menú" width="24">
+        </button>
+        <a href="index.html"><img src="./assets/img/logo_transparenteRecortado.png" alt="NutriCore" class="logo"></a>
+        <div class="header-icons">
+            <div class="search-container">
+                <input type="search" id="search-input" class="search-input" placeholder="Buscar...">
+                <button class="icon-btn search-btn">
+                    <img src="./assets/icons/search.svg" alt="Buscar" width="24">
+                    <span>Buscar</span>
+                </button>
+            </div>
+            <div class="user-menu">
+                <button class="icon-btn user-btn">
+                    <img src="./assets/icons/user.svg" alt="Usuario" width="24">
+                    <span id="user-name">Usuario</span>
+                </button>
+                <div class="user-dropdown">
+                    <a href="./backend/forms/form_login.php" class="btn-log">Login</a>
+                    <a href="./backend/forms/customers/customer_insert.php" class="btn-reg">Register</a>
+                </div>
+            </div>
+            <a href="./assets/views/carrito.html" class="icon-btn cart-btn" aria-label="Carrito">
+                <img src="./assets/icons/cart.svg" alt="Carrito" width="24">
+                <span>Carrito</span>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+    <nav class="category-nav">
+        <button class="close-menu" aria-label="Cerrar menú">
+            <img src="./assets/icons/close.svg" alt="Cerrar" width="24">
+        </button>
+        <ul class="category-links">
+            <li class="category-item">
+                <a href="#">Proteínas</a>
+                <div class="submenu">
+                    <a href="#">Whey Isolate</a>
+                    <a href="#">Whey Concentrate</a>
+                    <a href="#">Vegan Protein</a>
+                    <a href="#">Caseína</a>
+                </div>
+            </li>
+            <li class="category-item">
+                <a href="#">Creatina</a>
+                <div class="submenu">
+                    <a href="#">Monohidratada</a>
+                    <a href="#">Micronizada</a>
+                </div>
+            </li>
+            <li class="category-item">
+                <a href="#">Vitaminas</a>
+                <div class="submenu">
+                    <a href="#">Multivitamínicos</a>
+                    <a href="#">Omega 3</a>
+                </div>
+            </li>
+            <li class="category-item">
+                <a href="#">Pre-Workout</a>
+                <div class="submenu">
+                    <a href="#">Energizantes</a>
+                    <a href="#">Pump Boosters</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <section class="banner">
+        <div class="slides">
+            <div class="slide active"
+                style="background-image:url('https://via.placeholder.com/1200x480?text=Promo+1');">
+                <div class="slide-inner">
+                    <h1>Proteínas de alta calidad</h1>
+                    <p>Impulsa tu rendimiento con NutriCore</p>
+                    <a href="#" class="cta">Comprar ahora</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image:url('https://via.placeholder.com/1200x480?text=Promo+2');">
+                <div class="slide-inner">
+                    <h1>Creatina Monohidratada</h1>
+                    <p>Más fuerza y resistencia en tus entrenamientos</p>
+                    <a href="#" class="cta">Comprar ahora</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image:url('https://via.placeholder.com/1200x480?text=Promo+3');">
+                <div class="slide-inner">
+                    <h1>Suplementos Veganos</h1>
+                    <p>Proteínas sin productos animales</p>
+                    <a href="#" class="cta">Comprar ahora</a>
+                </div>
+            </div>
+        </div>
+        <button class="nav-btn left">
+            <img src="./assets/icons/left.svg" alt="Anterior" width="24">
+        </button>
+        <button class="nav-btn right">
+            <img src="./assets/icons/right.svg" alt="Siguiente" width="24">
+        </button>
+        <div class="dots"></div>
+    </section>
+    <main class="main-container">
+        <h1 class="section-title">Nuestros Productos</h1>
+        <div class="card-flex">
+            <div class="card">
+                <a href="./views/product-detalle.html"><img src="./assets/img/protein.png"
+                        alt="Proteína Whey Isolate"></a>
+                <h4>Proteína Whey Isolate</h4>
+                <div class="price">€24.99</div>
+                <div class="formato">Formato: 1kg</div>
+                <div class="card-actions"> <input type="number" value="1" min="1">
+                    <button class="btn btn-primary add-to-cart">Agregar</button>
+                    <a href="./views/product-detalle.html" class="btn btn-ghost">Ver</a>
+                </div>
+            </div>
+            <div class="card">
+                <a href="./views/product-detalle.html"><img src="./assets/img/creatina.png"
+                        alt="Creatina Monohidratada"></a>
+                <h4>Creatina Monohidratada</h4>
+                <div class="price">€14.50</div>
+                <div class="formato">Formato: 500g</div>
+                <div class="card-actions">
+                    <input type="number" value="1" min="1">
+                    <button class="btn btn-primary add-to-cart">Agregar</button>
+                    <a href="#" class="btn btn-ghost">Ver</a>
+                </div>
+            </div>
+            <div class="card">
+                <a href="./views/product-detalle.html"><img src="./assets/img/vegan-protein.png"
+                        alt="Proteína Vegan"></a>
+                <h4>Proteína Vegan</h4>
+                <div class="price">€26.50</div>
+                <div class="formato">Formato: 1kg</div>
+                <div class="card-actions">
+                    <input type="number" value="1" min="1">
+                    <button class="btn btn-primary add-to-cart">Agregar</button>
+                    <a href="#" class="btn btn-ghost">Ver</a>
+                </div>
+            </div>
+            <div class="card">
+                <a href="./views/product-detalle.html"><img src="./assets/img/BCAA2-1-1.png"
+                        alt="BCAA 2:1:1"></a>
+                <h4>BCAA 2:1:1</h4>
+                <div class="price">€19.90</div>
+                <div class="formato">Formato: 300g</div>
+                <div class="card-actions">
+                    <input type="number" value="1" min="1">
+                    <button class="btn btn-primary add-to-cart">Agregar</button>
+                    <a href="#" class="btn btn-ghost">Ver</a>
+                </div>
+            </div>
+            <div class="card">
+                <a href="./views/product-detalle.html"><img src="./assets/img/glutamina.png" alt="Glutamina"></a>
+                <h4>Glutamina</h4>
+                <div class="price">€12.99</div>
+                <div class="formato">Formato: 500g</div>
+                <div class="card-actions">
+                    <input type="number" value="1" min="1">
+                    <button class="btn btn-primary add-to-cart">Agregar</button>
+                    <a href="#" class="btn btn-ghost">Ver</a>
+                </div>
+            </div>
+            <div class="card">
+                <a href="./views/product-detalle.html"><img src="./assets/img/omega3.png" alt="Omega 3"></a>
+                <h4>Omega 3</h4>
+                <div class="price">€18.75</div>
+                <div class="formato">Formato: 60 cápsulas</div>
+                <div class="card-actions">
+                    <input type="number" value="1" min="1">
+                    <button class="btn btn-primary add-to-cart">Agregar</button>
+                    <a href="#" class="btn btn-ghost">Ver</a>
+                </div>
+            </div>
+            <div class="card">
+                <a href="./views/product-detalle.html"><img src="./assets/img/multivitaminico.png"
+                        alt="Multivitamínico"></a>
+                <h4>Multivitamínico</h4>
+                <div class="price">€22.00</div>
+                <div class="formato">Formato: 90 cápsulas</div>
+                <div class="card-actions">
+                    <input type="number" value="1" min="1">
+                    <button class="btn btn-primary add-to-cart">Agregar</button>
+                    <a href="#" class="btn btn-ghost">Ver</a>
+                </div>
+            </div>
+            <div class="card">
+                <a href="./views/product-detalle.html"><img src="./assets/img/pre-workout.png"
+                        alt="Pre-Workout"></a>
+                <h4>Pre-Workout</h4>
+                <div class="price">€28.50</div>
+                <div class="formato">Formato: 400g</div>
+                <div class="card-actions">
+                    <input type="number" value="1" min="1">
+                    <button class="btn btn-primary add-to-cart">Agregar</button>
+                    <a href="#" class="btn btn-ghost">Ver</a>
+                </div>
+            </div>
+        </div>
+        <a href="#" id="up">Ver más</a>
+    </main>
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.facebook.com/NutriCore" target="_blank">
+                <img src="./assets/icons/facebook.svg" alt="Facebook" width="32">
+            </a>
+            <a href="https://twitter.com/NutriCore" target="_blank">
+                <img src="./assets/icons/twitter.svg" alt="Twitter" width="32">
+            </a>
+            <a href="https://www.instagram.com/NutriCore" target="_blank">
+                <img src="./assets/icons/instagram.svg" alt="Instagram" width="32">
+            </a>
+            <a href="https://www.linkedin.com/company/NutriCore" target="_blank">
+                <img src="./assets/icons/linkedin.svg" alt="LinkedIn" width="32">
+            </a>
+            <a href="https://www.youtube.com/NutriCore" target="_blank">
+                <img src="./assets/icons/youtube.svg" alt="YouTube" width="32">
+            </a>
+        </div>
+        <div class="politics">
+            <a href="#">Política de privacidad</a>
+        </div>
+        <div class="terminos">
+            <a href="#">Términos de uso</a>
+        </div>
+        <div class="contacto">
+            <a href="#">Contacto</a>
+        </div>
+        <p>&copy; 2025 NutriCore. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
